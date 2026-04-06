@@ -1,8 +1,13 @@
 <h2>Login</h2>
 <form method="post">
   <!-- {% csrf_token %}
-  {{ form.as_p }} -->
+  {{ form.as_p }} --><!-- [2] SQL injection, open these commens and remove the current login form below -->
+  {% if error %}
+    <span>{{error}}<span/>
+  {% endif %}
+
   {% csrf_token %}
+  <br/>
   <span>Username<span/>
   <br/>
   <input type="text" name="username" id="user_id"/>
