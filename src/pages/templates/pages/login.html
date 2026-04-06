@@ -1,6 +1,16 @@
 <h2>Login</h2>
 <form method="post">
+  <!-- {% csrf_token %}
+  {{ form.as_p }} -->
   {% csrf_token %}
-  {{ form.as_p }}
+  <span>Username<span/>
+  <br/>
+  <input type="text" name="username" id="user_id"/>
+  <br/>
+  <span>Password<span/>
+  <br/>
+  <input type="password" name="password" id="passwd_id"/>
+  <br/>
+
   <button type="submit">Login</button>
 </form>
