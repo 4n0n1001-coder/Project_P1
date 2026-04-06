@@ -75,22 +75,21 @@ def Login(request):
 		user = request.POST.get('username')
 		passwd = request.POST.get('password')
         
-		sql = f"SELECT id, password FROM auth_user WHERE username='{user}';"
+		sql = f"SELECT id, password FROM auth_user WHERE username='{user}' AND password='{passwd}';"
 
 		with connection.cursor() as cursor:
 			cursor.execute(sql)
-			row = cursor.fetchall()
+			credentials = cursor.fetchall()
         
-		if row:
-			row = row[0]
-			id = row[0]
-			hashed_password = row[1]
-				
-   
-			if check_password(passwd, hashed_password):
-				user_obj = User.objects.get(id=id)
-				login(request, user_obj)
-				return redirect('/')
+		if credentials:
+			credentials = credentials[0]
+			_id = credentials[0]
+			user_obj = User.objects.get(id=_id)
+
+			#print(user_obj)
+			
+			login(request, user_obj)
+			return redirect('/')
 		else:
 			return render(request, 'pages/login.html', {'error': 'Please enter a correct username and password. Note that both fields may be case-sensitive.'})
 

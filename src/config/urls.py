@@ -25,3 +25,5 @@ urlpatterns = [
 	path('logout/', LogoutView.as_view(next_page='/')),
 	path('', include('src.pages.urls'))
 ]
+
+# SALT: pbkdf2_sha256

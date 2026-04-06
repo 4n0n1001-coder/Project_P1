@@ -74,10 +74,10 @@ INSERT INTO django_session VALUES('cn30d7b93cmt93vmr9t7nwa18612gdnf','YzRlNTM3MT
 INSERT INTO django_session VALUES('qklispv15m8i4apw04l04pkn3v95nhaj','MDRiZTNjOGM1ODJmN2NlZTAyODNkMDRjNjhhOGI3ZmM5ODFmMDQ2ODp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0NDgzZTM5ZTUwZTVkNmNkYzM0Y2FkNjM3NDNlM2NjYjBiY2E4Y2E5In0=','2020-08-02 17:31:16.947331');
 INSERT INTO django_session VALUES('0svcjfv95l898br37pi7rdchbql234ke','MDRiZTNjOGM1ODJmN2NlZTAyODNkMDRjNjhhOGI3ZmM5ODFmMDQ2ODp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0NDgzZTM5ZTUwZTVkNmNkYzM0Y2FkNjM3NDNlM2NjYjBiY2E4Y2E5In0=','2020-08-06 14:30:37.036772');
 CREATE TABLE IF NOT EXISTS "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "username" varchar(150) NOT NULL UNIQUE, "last_name" varchar(150) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "first_name" varchar(150) NOT NULL);
-INSERT INTO auth_user VALUES(1,'pbkdf2_sha256$180000$S4MvstQ5t2rx$sRNX547ndLQrKJdwQ2oPR9kenq2qcYLDCFABUYFFp1c=','2020-07-17 20:01:08.616448',1,'admin','','admin@admin.gov',1,1,'2020-07-17 19:58:13.209291','');
-INSERT INTO auth_user VALUES(2,'pbkdf2_sha256$180000$Kh1Dq2UDGO17$mzsX0Mp2mTYuMXkfrzUCCj3xZDjWOAdblmH0sDo+DIQ=','2020-07-17 22:17:40.896304',0,'bob','','',0,1,'2020-07-17 20:01:47.462580','');
-INSERT INTO auth_user VALUES(3,'pbkdf2_sha256$180000$o2Gh6IdeOjRM$4x7sNu5bLQB+HGpYZVuZBjg7yAKJjz5TPkFx0yWBhwc=','2020-07-23 14:30:37.034696',0,'alice','','',0,1,'2020-07-17 20:02:37.168116','');
-INSERT INTO auth_user VALUES(4,'pbkdf2_sha256$180000$M1zqxGvWIReQ$AAFi7gwlp0CH/t8Jd8aiZ1V6XmGXT4639F50RH6EX3c=',NULL,0,'patrick','','',0,1,'2020-07-17 20:06:58.848246','');
+INSERT INTO auth_user VALUES(1,'Ex7r3m37lyS7r0ngP4$$w0rd!','2020-07-17 20:01:08.616448',1,'admin','','admin@admin.gov',1,1,'2020-07-17 19:58:13.209291','');
+INSERT INTO auth_user VALUES(2,'squarepants','2020-07-17 22:17:40.896304',0,'bob','','',0,1,'2020-07-17 20:01:47.462580','');
+INSERT INTO auth_user VALUES(3,'redqueen','2020-07-23 14:30:37.034696',0,'alice','','',0,1,'2020-07-17 20:02:37.168116','');
+INSERT INTO auth_user VALUES(4,'4N07h3rV3RyS7r0ngP4$$w0rd!',NULL,0,'patrick','','',0,1,'2020-07-17 20:06:58.848246','');
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('django_migrations',19);
 INSERT INTO sqlite_sequence VALUES('django_admin_log',3);
