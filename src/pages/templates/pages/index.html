@@ -8,7 +8,12 @@
     <body>
         <h1>Your account</h1>
 
+        <!-- [FLAW 6] Rendering user input with the 'safe' filter makes it vulnerable to XSS -->
         <h2>{{ name|safe }}</h2>
+
+        <!-- [FIX 5] Remove the '|safe' filter to enable Django's automatic HTML escaping -->
+        <!-- <h2>{{ name }}</h2> -->
+        
 
         <table>
 		<tr>

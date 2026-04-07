@@ -15,36 +15,24 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#SESSION_COOKIE_SAMESITE = 'None'
-#SESSION_COOKIE_SECURE = False
-#CSRF_COOKIE_SAMESITE = 'None'
-#CSRF_COOKIE_SECURE = False
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_#h3^7@u)4ry6p@q_%uh%0tdah_47*k0it0pobh%p-c_2b=u0n'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# [3] A6:2016-Security Misconfiguration
-# Misconfigured website reveals important details to the attacker,
-# such as the whole application structure, URL paths, which libraries are used,
-# and where the files exist.
-#
-# PoC
-#   1. Navigate to any page that does not exist
-#      e.g. http://127.0.0.1:8000/this_page_does_not_exist
-#   You receive a full page of details that can be used to map the
-#   website functionality
-# ---- FIX ----
-# Replace current configuration with commented.
-#DEBUG = False
-#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+# [FLAW 5]
+# DEBUG = True reveals application structures and URLs
+# in situations that lead to errors like 404 or 500.
 DEBUG = True
 ALLOWED_HOSTS = []
 
+# [FIX 5]
+# Once DEBUG is set to False, the user will only see a very basic
+# 404 error page, and no sensitive information will be exposed.
+#DEBUG = False
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 
