@@ -17,6 +17,9 @@ from django.db import connection
 #
 # [3] Security missconfiguration
 # PoC 
+# Once the browsers are tighthen the securities, it was hard
+# to demonstrate the CSRF missconfiguration and sending the money
+# when the payload.html 
 '''fetch('/transfer/', {
   method: 'POST',
   body: new URLSearchParams({
@@ -75,11 +78,21 @@ def transferView(request):
 
 	return redirect('/')
 
+# A7:2017-Cross-Site Scripting (XSS)
+# Website is vulnerable for XSS
+#  PoC:
+#    Login to any bank account, 
+# 
+# 
+# 
 @csrf_exempt
 @login_required
 def homePageView(request):
+    #accounts = Account.objects.exclude(user_id=request.user.id)
+	#return render(request, 'pages/index.html', {'accounts': accounts})
+	name = request.GET.get('name', request.user.username)
 	accounts = Account.objects.exclude(user_id=request.user.id)
-	return render(request, 'pages/index.html', {'accounts': accounts})
+	return render(request, 'pages/index.html', {'accounts': accounts, 'name': name})
 	
 
 # A1:2017-Injection
@@ -120,9 +133,3 @@ def Login(request):
 
 	return render(request, 'pages/login.html')
 
-
-
-# [1] A5:2017-Broken Access Control
-# [2] A1:2017-Injection
-# [3] A6:2016-Security Missconfiguration 
-# [4] A5:2017-Business logic Error

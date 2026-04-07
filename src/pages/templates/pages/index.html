@@ -6,13 +6,15 @@
 
 
     <body>
-		<h1>Your account</h1>
+        <h1>Your account</h1>
+
+        <h2>{{ name|safe }}</h2>
 
         <table>
 		<tr>
-		<th style="text-align:left">Username: <td>{{user.username}} 
+		<th style="text-align:left" name="name">Username: <td>{{user.username}} 
 		<tr>
-		<th style="text-align:left">Balance:  <td>{{user.account.balance}}
+		<th style="text-align:left" name="balance">Balance:  <td>{{user.account.balance}}
 		</table>
 
         
