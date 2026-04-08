@@ -1,12 +1,15 @@
 <h2>Login</h2>
 <form method="post">
-  <!-- {% csrf_token %}
-  {{ form.as_p }} --><!-- [2] SQL injection, open these commens and remove the current login form below -->
+  {% csrf_token %}
+
+  <!-- [FLAW 1]
+       Manual form fields that sumbit raw data to a vulnerable backend view.
+       This manual approach bypasses Django's built-in form validation
+       and security features. -->
   {% if error %}
     <span>{{error}}<span/>
   {% endif %}
 
-  {% csrf_token %}
   <br/>
   <span>Username<span/>
   <br/>
@@ -17,5 +20,15 @@
   <input type="password" name="password" id="passwd_id"/>
   <br/>
 
+  <!-- [FIX 1]
+       By using Django's built-in 'form' object with LoginView,
+       we ensure that the inputs are handled, cleaned, and validated,
+       according to secure defaults.
+
+    {{ form.as_p }}
+  -->
+
   <button type="submit">Login</button>
 </form>
+
+
